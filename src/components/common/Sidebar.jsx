@@ -1,4 +1,4 @@
-import { BarChart2, DollarSign, Menu, Scale, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from 'lucide-react'
+import { BarChart2, Menu, Settings, } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import {AnimatePresence, motion} from "framer-motion"
 import { Link } from 'react-router-dom';
@@ -13,23 +13,18 @@ function Sidebar() {
     const [isSidebarOpen,setIsSidebarOpen]= useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
-    // Check if the screen is mobile
     useEffect(() => {
       const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768); // 768px is a common breakpoint for mobile
+        setIsMobile(window.innerWidth <= 768); 
       };
   
-      // Initial check
       handleResize();
   
-      // Add event listener for window resize
       window.addEventListener('resize', handleResize);
   
-      // Cleanup event listener
       return () => window.removeEventListener('resize', handleResize);
     }, []);
   
-    // Calculate sidebar width based on screen size
     const sidebarWidth = isSidebarOpen ? (isMobile ? 150 : 256) : 80;
   
   return (

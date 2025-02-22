@@ -39,7 +39,7 @@ function OverviewPage() {
         case 'Backlog':
           backlog++;
           break;
-        case 'In Progress':
+        case 'Progress':
           progress++;
           break;
         case 'Paused':

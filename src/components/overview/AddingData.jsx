@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import {motion} from 'framer-motion'
 import { CircleX } from 'lucide-react';
 
-function AddingData({name,icon:Icon,value,color,handleFormSubmit}) {
+function AddingData({name,icon:Icon,value,color,handleFormSubmit,status}) {
 
   const [showModal, setShowModal] = useState(false);
   
     const [formData, setFormData] = useState({
       title: '',
       assignee: '',
-      status: 'Backlog',
+      status: status,
       startDate: '',
       endDate: '',
     });
@@ -29,7 +29,7 @@ function AddingData({name,icon:Icon,value,color,handleFormSubmit}) {
         Assignee: '',
         startdate: '',
         endDate: '',
-        status: 'Backlog',
+        status: '',
       });
     };
   
@@ -75,17 +75,6 @@ whileHover={{y: -5, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'}}
                 className='bg-gray-700 text-white placeholder-gray-400 rounded-lg w-full px-4 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500'
                 required
               />
-              <select
-                name='status'
-                value={formData.status}
-                onChange={handleInputChange}
-                className='bg-gray-700 text-white rounded-lg w-full px-4 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500'
-              >
-                <option value='Backlog'>Backlog</option>
-                <option value='In Progress'>In Progress</option>
-                <option value='Paused'>Paused</option>
-                <option value='Ready'>Ready</option>
-              </select>
               <div className='flex flex-col space-x-4 mb-4'>
                 <label htmlFor="startdate" className='bg-gray-700 text-white rounded-lg w-full px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'>Start Date</label>
                 <input
@@ -93,7 +82,7 @@ whileHover={{y: -5, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'}}
                   name='startDate'
                   value={formData.startDate}
                   onChange={handleInputChange}
-                  className='bg-gray-700 text-white mt-4 rounded-lg w-full px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='bg-gray-700 text-white mt-4 rounded-lg w-full px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 date-set'
                   required
                 /> <br />
                 <label htmlFor="enddate" className='bg-gray-700 text-white rounded-lg w-full px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'>End Date</label>
@@ -102,7 +91,7 @@ whileHover={{y: -5, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'}}
                   name='endDate'
                   value={formData.endDate}
                   onChange={handleInputChange}
-                  className='bg-gray-700 text-white mt-4  rounded-lg w-full px-1 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='bg-gray-700 text-white mt-4  rounded-lg w-full px-1 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 date-set'
                   required
                 />
               </div>

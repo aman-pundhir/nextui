@@ -21,10 +21,10 @@ function AddData({handleFormSubmit}) {
               animate={{opacity:1, y: 0}}
               transition={{duration: 1}}
             >
-                <AddingData icon={CircleX} color={'#6366F1'} name={"Backlog"} value={'Add Backlog'} handleFormSubmit={handleFormSubmit} />
-                <AddingData icon={Loader} color={'#8B5CF6'} name={"In Progress"} value={'Add Progress'} handleFormSubmit={handleFormSubmit}/>
-                <AddingData icon={PauseCircle} color={'#EC4899'} name={"Paused"} value={'Add Paused'} handleFormSubmit={handleFormSubmit}/>
-                <AddingData icon={CircleCheck} color={'#10B981'} name={"Ready"} value={'Add Ready'} handleFormSubmit={handleFormSubmit}/>
+                <AddingData icon={CircleX} color={'#6366F1'} name={"Backlog"} value={'Add Backlog'} handleFormSubmit={handleFormSubmit} status={"Backlog"}/>
+                <AddingData icon={Loader} color={'#8B5CF6'} name={"In Progress"} value={'Add Progress'} handleFormSubmit={handleFormSubmit} status={"Progress"}/>
+                <AddingData icon={PauseCircle} color={'#EC4899'} name={"Paused"} value={'Add Paused'} handleFormSubmit={handleFormSubmit} status={"Paused"}/>
+                <AddingData icon={CircleCheck} color={'#10B981'} name={"Ready"} value={'Add Ready'} handleFormSubmit={handleFormSubmit} status={"Ready"}/>
         </motion.div>
     </motion.div>
   )
