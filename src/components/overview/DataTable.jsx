@@ -33,8 +33,8 @@ function DataTable({userData, onDelete}) {
                 <h2 className='text-xl font-semibold text-gray-100'>Users</h2>
                 <div className="relative">
                     <input type="text" placeholder='Search Users...' 
-                      className='bg-gray-700 text-white placeholder-gray-400 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500' onChange={handleSearch} value={searchTerm}/>
-                      <Search className='absolute left-3 top-2.5 text-gray-400' size={18} />
+                      className='bg-gray-700 text-white placeholder-gray-400 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 search-icon ' onChange={handleSearch} value={searchTerm}/>
+                      <Search className={`absolute left-3 top-2.5 text-gray-400 `} size={18} />
                 </div>
             </div>
             <div className="overflow-x-auto">

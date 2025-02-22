@@ -1,23 +1,40 @@
 import { BarChart2, DollarSign, Menu, Scale, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {AnimatePresence, motion} from "framer-motion"
 import { Link } from 'react-router-dom';
 
 const SIDEBAR_ITEMS =[
    { name:"Overview", icon:BarChart2,color:"#6366f1",href:'/'},
-//    { name:"Products", icon:ShoppingBag,color:"#8B5CF6",href:'/products'},
-//    { name:"Users", icon:Users,color:"#EC4899",href:'/users'},
-//    { name:"Sales", icon:DollarSign,color:"#10B981",href:'/sales'},
-//    { name:"Orders", icon:ShoppingCart,color:"#F59E0B",href:'/orders'},
-//    { name:"Analytics", icon:TrendingUp,color:"#3B82F6",href:'/analytics'},
    { name:"Settings", icon:Settings,color:"#6EE7B7",href:'/settings'}
 ]
 
 function Sidebar() {
-    const [isSidebarOpen,setIsSidebarOpen]= useState(true);
+
+    const [isSidebarOpen,setIsSidebarOpen]= useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Check if the screen is mobile
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768); // 768px is a common breakpoint for mobile
+      };
+  
+      // Initial check
+      handleResize();
+  
+      // Add event listener for window resize
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup event listener
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    // Calculate sidebar width based on screen size
+    const sidebarWidth = isSidebarOpen ? (isMobile ? 150 : 256) : 80;
+  
   return (
-    <motion.div className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${isSidebarOpen ? 'w-64':'w-20'}`}
-    animate={{ width: isSidebarOpen ? 256 : 80}}
+    <motion.div className={`main-div-sidebar relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${isSidebarOpen ? 'w-64':'w-20'}`}
+    animate={{ width: sidebarWidth}}
     >
         <div className='h-full bg-gray-800 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700 '>
             <motion.button 

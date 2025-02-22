@@ -21,7 +21,7 @@ function DataChart({backlog, progress, paused, ready}) {
         transition={{delay: 0.4}}
     >
         <h2 className='text-lg font-medium mb-4 text-gray-100'>
-            Sales By Channel
+            Data Graph
         </h2>
         <div className="h-80">
             <ResponsiveContainer >
