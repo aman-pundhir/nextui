@@ -80,6 +80,7 @@ whileHover={{y: -5, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'}}
                 <input
                   type='date'
                   name='startDate'
+                  placeholder='dd-mm-yyyy'
                   value={formData.startDate}
                   onChange={handleInputChange}
                   className='bg-gray-700 text-white mt-4 rounded-lg w-full px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 date-set'
@@ -89,6 +90,7 @@ whileHover={{y: -5, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'}}
                 <input
                   type='date'
                   name='endDate'
+                  placeholder='dd-mm-yyyy'
                   value={formData.endDate}
                   onChange={handleInputChange}
                   className='bg-gray-700 text-white mt-4  rounded-lg w-full px-1 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 date-set'
