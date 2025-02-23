@@ -25,7 +25,7 @@ function Sidebar() {
       return () => window.removeEventListener('resize', handleResize);
     }, []);
   
-    const sidebarWidth = isSidebarOpen ? (isMobile ? 150 : 256) : 80;
+    const sidebarWidth = isSidebarOpen ? (isMobile ? setIsSidebarOpen(false): 256) : 80;
   
   return (
     <motion.div className={`main-div-sidebar relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${isSidebarOpen ? 'w-64':'w-20'}`}
@@ -43,7 +43,7 @@ function Sidebar() {
             <nav className='mt-8 flex-grow '>
                 {SIDEBAR_ITEMS.map((item) => (
                     <Link key={item.href} to={item.href}>
-                        <motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'>
+                        <motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2' title={item.name}>
                             <item.icon size={20} style={{color: item.color, minWidth: "20px"}}/> 
                         
                         <AnimatePresence>

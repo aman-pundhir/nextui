@@ -10,7 +10,7 @@ import DataChart from './DataChart'
 
 function OverviewPage() {
 
-  const [submitData, setSubmitData] = useState([{title: "Aman", assignee: "Trainer", startDate: "10-02-2025", endDate: "24-02-2025", status: "Ready"},]);
+  const [submitData, setSubmitData] = useState([{title: "UI UX Desogn", assignee: "Trainer", startDate: "10-02-2025", endDate: "24-02-2025", status: "Ready"},]);
   
     const handleFormSubmit = (formData) => {
       console.log(formData);
